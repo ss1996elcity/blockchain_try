@@ -94,7 +94,7 @@ jobs:
           script: |
             # Run a new container from a new image
             cd api
-            sudo docker-compose -f docker-compose.yml stop
-            sudo docker-compose -f docker-compose.yml rm -f
-            sudo docker-compose -f docker-compose.yml pull
-            sudo docker-compose -f docker-compose.yml up -d --force-recreate ci_cd_blockchain_develop
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml stop
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml rm -f
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml pull
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml up -d --force-recreate ci_cd_blockchain_develop
