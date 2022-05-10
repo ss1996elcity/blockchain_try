@@ -36,8 +36,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Unit Tests
-        run: cd test_for_CI_CD && jest
+      - uses: actions/checkout@v1
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.3
+        with:
+          jestArgs: test_for_CI_CD/calc.test.js
+
+      #- name: Unit Tests
+      #  run: cd test_for_CI_CD && jest
 
 
   build_and_push_docker_container:
