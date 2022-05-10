@@ -94,6 +94,8 @@ jobs:
           script: |
             # Run a new container from a new image
             cd api_master
+            echo ${{ secrets.PASSWORD }} | sudo -S docker stop test_ci_cd_blockchain_master
+            echo ${{ secrets.PASSWORD }} | sudo -S docker container rm test_ci_cd_blockchain_master
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml stop
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml rm -f
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml pull
