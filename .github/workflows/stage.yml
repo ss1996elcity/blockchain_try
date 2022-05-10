@@ -21,8 +21,10 @@ jobs:
           node-version: 14.x
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install node.js (--version 12.x)
+      - name: Install node.js (--version 12.x) part 1
         run: apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+        
+      - name: Install node.js (--version 12.x) part 2
         run: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
       - name: Install jest
