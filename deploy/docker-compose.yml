@@ -10,4 +10,4 @@ services:
      container_name: test_ci_cd_blockchain_develop
      image: tss45elcity/repo_1:blockchain_develop_branch_v1
      ports:
-       - "8888:8080"
+       - "8888:80"
