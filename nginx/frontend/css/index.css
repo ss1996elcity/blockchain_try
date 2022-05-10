@@ -1,0 +1,168 @@
+.info-text {
+  /*font-size: 1.1em; */
+}
+
+.full-width {
+  width: 100%;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+/* Logo & Header */
+
+
+body {
+  /* background-image:url('wallpaper_1.gif'); */ 
+  background-size:100%;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  height:100%;
+  width:100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#logo-container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#logo-text {
+ /* padding-top: 15px; */
+  margin-top: 5px;
+}
+/*
+#mm-logo {
+  width: 20%;
+}
+*/
+
+/* Encrypt/Decrypt */
+
+#encryptMessageInput {
+  margin-bottom: 1rem;
+}
+
+.general_image {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 20%;
+}
+
+.info_text {
+  width:  100%;
+}
+
+.general {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 20px;
+}
+
+
+.rounded {
+counter-reset: li; 
+list-style: none; 
+font: 18px "Trebuchet MS", "Lucida Sans";
+padding: 0;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.rounded a {
+position: relative;
+display: block;
+padding: .4em 5em .4em 2em;
+margin: .5em 0;
+background: #DAD2CA;
+color: #444;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+.rounded a:hover {background: #E9E4E0;}
+.rounded a:hover:before {transform: rotate(80deg);} /* 360deg */
+.rounded a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background: #8FD4C1;
+height: 2em;
+width: 2em;
+line-height: 1.5em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}
+
+
+@font-face { font-family: ZombieFont1; src: url('bloodcrowc.ttf'); } 
+@font-face { font-family: ZombieFont2; src: url('youmurdererbb_reg.ttf'); } 
+@font-face { font-family: ZombieFont3; src: url('ThinkNothing.otf'); }
+
+
+@media screen and (max-width : 2048px) {
+    #mm-logo {
+      /* visibility: true; */
+      display: block;
+    }
+    #my_card {
+      width: 30%; 
+      margin-top: 20px; 
+      padding-top: 20px;
+      opacity: 90%;
+    }
+
+    #logo-text-2 {
+      display: none;
+    }
+    #logo-text {
+      display: block;
+    }
+
+}
+
+
+@media screen and (max-width : 1200px) {
+    #mm-logo {
+      display: none;
+    }
+    .general {
+      display: flex;
+      width: 100%;
+      padding-left: 20px;
+      align-content: space-between;
+      flex-direction: column;
+    }
+    #logo-container {
+      display: table;
+      align-self: center;
+
+    }
+    #my_card {
+      style="width: 100%; margin-top: 20px; opacity: 90%;
+    }
+
+
+    #logo-text {
+      margin-right: 20px;
+      display: none;
+    }
+
+    #logo-text-2 {
+      display: block;
+    }
+
+}
