@@ -26,6 +26,9 @@ jobs:
         
       - name: Install node.js (--version 12.x) part 2
         run: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+        
+      - name: Install node.js (--version 12.x) part 3
+        run: sudo apt -y install nodejs && sudo apt -y  install gcc g++ make
 
       - name: Install jest
         run: npm install --save-dev jest
