@@ -80,8 +80,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           #key: ${{ secrets.SSHKEY }}
-          source: "deploy/"
-          target: "api"
+          source: "deploy_develop/"
+          target: "api_develop"
           strip_components: 1
 
       - name: Deploy to remote server via SSH action
@@ -93,7 +93,7 @@ jobs:
           #key: ${{ secrets.SSHKEY }}
           script: |
             # Run a new container from a new image
-            cd api
+            cd api_develop
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml stop
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml rm -f
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml pull
