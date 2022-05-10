@@ -14,36 +14,41 @@ jobs:
 
   tests:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+    
     steps:
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 12.x
-          registry-url: 'https://registry.npmjs.org'
+#      - name: Install Node.js
+#        uses: actions/setup-node@v2
+#        with:
+#          node-version: 12.x
+#          registry-url: 'https://registry.npmjs.org'
 
-      #- name: Install node.js (--version 12.x) part 1
-      #  run: sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+      - name: Install node.js (--version 12.x) part 1
+        run: sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
         
-      #- name: Install node.js (--version 12.x) part 2
-      #  run: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+      - name: Install node.js (--version 12.x) part 2
+        run: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
         
-      #- name: Install node.js (--version 12.x) part 3
-      #  run: sudo apt -y install nodejs && sudo apt -y  install gcc g++ make
+      - name: Install node.js (--version 12.x) part 3
+        run: sudo apt -y install nodejs && sudo apt -y install gcc g++ make
 
-      #- name: Install jest
-      #  run: sudo npm install --save-dev jest-cli
+      - name: Install jest
+        run: npm i --global jest-cli && sudo npm install --save-dev jest-cli
 
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - uses: actions/checkout@v1
-      - name: Run Jest
-        uses: stefanoeb/jest-action@1.0.3
-        with:
-          jestArgs: test_for_CI_CD/calc.test.js
+      #- uses: actions/checkout@v1
+      #- name: Run Jest
+      #  uses: stefanoeb/jest-action@1.0.3
+      #  with:
+      #    jestArgs: test_for_CI_CD/calc.test.js
 
-      #- name: Unit Tests
-      #  run: cd test_for_CI_CD && jest
+      - name: Unit Tests
+        run: cd test_for_CI_CD && jest
 
 
   build_and_push_docker_container:
