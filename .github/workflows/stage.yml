@@ -31,7 +31,7 @@ jobs:
         run: sudo apt -y install nodejs && sudo apt -y  install gcc g++ make
 
       - name: Install jest
-        run: npm install --save-dev jest
+        run: npm install --save-dev jest-cli
 
       - name: Checkout code
         uses: actions/checkout@v2
