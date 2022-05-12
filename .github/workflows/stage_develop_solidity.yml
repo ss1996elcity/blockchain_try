@@ -53,8 +53,11 @@ jobs:
       - name: Copy stop_truffle.js
         run: cp truffle_folder/stop_truffle.js truffle_folder_/truffle_test/stop_truffle.js
         
+      - name: Copy run_tests.sh
+        run: cp truffle_folder/run_tests.sh truffle_folder_/truffle_test/run_tests.sh
+        
       - name: truffle unit tests
-        run: cd truffle_folder_/truffle_test && echo -e "truffle test\ntruffle exec ./stop_truffle.js" | truffle develop 
+        run: cd truffle_folder_/truffle_test && ./run_tests.sh 
 
 
 
