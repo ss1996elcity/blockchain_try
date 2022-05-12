@@ -27,12 +27,12 @@ contract ZombieFactory is Ownable {
 
   Zombie[] public zombies;
 
-  function my_add(uint256 a) external pure returns (uint256) {
+  function my_add(uint256 a) external returns (uint256) {
   	a.add(1);
   	return a;
   }
   
-   function my_sub(uint256 a) external pure returns (uint256) {
+   function my_sub(uint256 a) external returns (uint256) {
   	a.sub(1);
   	return a;
   }
