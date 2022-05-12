@@ -9,15 +9,15 @@ import "../contracts/zombiefactory.sol";
 contract TestCryptoZombies {
 
 function testSafeMath_ADD() public {
-    ZombieFactory zombieFactory = ZombieFactory(DeployedAddresses.ZombieFactory());
-    uint256 result_add = zombieFactory.my_add(5);
+    CryptoZombies cryptoZombies = CryptoZombies(DeployedAddresses.CryptoZombies());
+    uint256 result_add = cryptoZombies.my_add(5);
     uint expectedValue = 6;
     Assert.equal(result_add, expectedValue, "Value of 'result_add' should be equal 6");
   }
 
 function testSafeMath_SUB() public {
-    ZombieFactory zombieFactory = ZombieFactory(DeployedAddresses.ZombieFactory());
-    uint256 result_sub = zombieFactory.my_sub(40);
+    CryptoZombies cryptoZombies = CryptoZombies(DeployedAddresses.CryptoZombies());
+    uint256 result_sub = cryptoZombies.my_sub(40);
     uint expectedValue = 39;
     Assert.equal(result_sub, expectedValue, "Value of 'result_sub' should be equal 39");
   }
