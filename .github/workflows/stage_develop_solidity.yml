@@ -86,7 +86,7 @@ jobs:
         with:
           tags: ${{ env.DOCKER_HUB_NAME }}${{ env.DOCKER_HUB_REPOSITORY }}${{ env.TAG }}
           context: ./truffle_folder
-          file: Dockerfile_Local_Test_Network
+          file: {context}/Dockerfile_Local_Test_Network
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
           #labels: ${{ steps.meta.outputs.labels }}
