@@ -3,8 +3,15 @@ pragma solidity ^0.4.25;
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 import "../contracts/CryptoZombies.sol";
+import "../contracts/erc721.sol.sol";
+import "../contracts/Migrations.sol";
+import "../contracts/ownable.sol";
+import "../contracts/safemath.sol";
+import "../contracts/zombieattack.sol";
 import "../contracts/zombiefactory.sol";
-
+import "../contracts/zombiefeeding.sol";
+import "../contracts/zombiehelper.sol";
+import "../contracts/zombieownership.sol";
 
 contract TestCryptoZombies {
 
