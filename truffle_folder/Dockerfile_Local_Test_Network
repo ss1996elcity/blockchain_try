@@ -1,13 +1,7 @@
 FROM ubuntu:latest
-#COPY truffle_folder/Geth/* /home/truffle_folder/Geth/
-#RUN apt-get install vim sudo git curl gcc mc
-#RUN apt install golang-go && go version
-#RUN add-apt-repository -y ppa:ethereum/ethereum
-#RUN apt-get install ethereum
-#RUN apt-get upgrade geth && geth version
-RUN apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+RUN apt-get update && apt-get -y install curl dirmngr apt-transport-https lsb-release ca-certificates
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-RUN apt -y install nodejs && sudo apt -y install gcc g++ make
+RUN apt-get -y install nodejs && sudo apt -y install gcc g++ make
 RUN npm i --global truffle
 RUN mkdir /home/truffle_folder
 RUN mkdir /home/truffle_folder/Geth
