@@ -25,7 +25,7 @@ function testSafeMath_ADD() public {
 function testSafeMath_SUB() public {
     CryptoZombies cryptoZombies = CryptoZombies(DeployedAddresses.CryptoZombies());
     uint256 result_sub = cryptoZombies.my_sub(40);
-    uint expectedValue = 399;
+    uint expectedValue = 39;
     Assert.equal(result_sub, expectedValue, "Value of 'result_sub' should be equal 39");
   }
 
