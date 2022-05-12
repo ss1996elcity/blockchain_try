@@ -51,7 +51,7 @@ jobs:
         run: cp truffle_folder/truffle_config/truffle-config.js truffle_folder_/truffle_test/truffle-config.js
         
       - name: truffle unit tests
-        run: cd truffle_folder_/truffle_test && echo "truffle test" | truffle develop
+        run: cd truffle_folder_/truffle_test && echo -e "truffle test\n.exit\n" | truffle develop
 
 
 
