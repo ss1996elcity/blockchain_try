@@ -33,25 +33,25 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Make Folder
-        run: mkdir truffle_folder/truffle_test 
+        run: mkdir -p truffle_folder_/truffle_test 
 
       - name: npm and truffle init && install @truffle/hdwallet-provider
-        run: cd truffle_folder/truffle_test && npm init && truffle init
+        run: cd truffle_folder_/truffle_test && npm init && truffle init
 
       - name: Copy contracts
-        run: cp truffle_folder/contracts/* truffle_folder/truffle_test/contracts/
+        run: cp truffle_folder/contracts/* truffle_folder_/truffle_test/contracts/
         
       - name: Copy migrations
-        run: cp truffle_folder/migrations/* truffle_folder/truffle_test/migrations/
+        run: cp truffle_folder/migrations/* truffle_folder_/truffle_test/migrations/
         
       - name: Copy test
-        run: cp truffle_folder/test/* truffle_folder/truffle_test/test/
+        run: cp truffle_folder/test/* truffle_folder_/truffle_test/test/
 
       - name: Copy truffle_config
-        run: cp truffle_folder/truffle_config/truffle-config.js truffle_folder/truffle_test/truffle-config.js
+        run: cp truffle_folder/truffle_config/truffle-config.js truffle_folder_/truffle_test/truffle-config.js
         
       - name: truffle unit tests
-        run: cd truffle_folder/truffle_test && echo "truffle test" | truffle develop
+        run: cd truffle_folder_/truffle_test && echo "truffle test" | truffle develop
 
 
 
