@@ -1,3 +1,3 @@
 const { exec } = require("child_process");
 
-exec("killall node");
+exec("killall -s 20 node");
