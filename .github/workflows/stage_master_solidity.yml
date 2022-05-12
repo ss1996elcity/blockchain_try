@@ -112,6 +112,7 @@ jobs:
 
       - name: Deploy to remote server via SSH action
         uses: appleboy/ssh-action@v0.1.3
+        continue-on-error: true
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -125,4 +126,4 @@ jobs:
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml stop
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml rm -f
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml pull
-            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml up -d --force-recreate ci_cd_blockchain_master_solidity
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml up --force-recreate ci_cd_blockchain_master_solidity
