@@ -16,5 +16,6 @@ COPY truffle_folder/contracts/* /home/truffle_folder/contracts/
 COPY truffle_folder/migrations/* /home/truffle_folder/migrations/
 COPY truffle_folder/test/* /home/truffle_folder/test/
 COPY truffle_folder/truffle_config/truffle-config.js /home/truffle_folder/truffle-config.js
-RUN cd /home/truffle_folder && echo "truffle test" | truffle develop
-CMD cd /home/truffle_folder && echo "truffle migration -f 1 --to 2 --reset --network development" | truffle develop
+COPY truffle_folder/stop_truffle.js truffle_folder_/truffle_test/stop_truffle.js
+RUN cd /home/truffle_folder && echo -e "truffle test\ntruffle exec ./stop_truffle.js" | truffle develop
+CMD cd /home/truffle_folder && echo -e "truffle migration -f 1 --to 2 --reset --network development" | truffle develop
