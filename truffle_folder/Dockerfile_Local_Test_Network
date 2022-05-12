@@ -5,7 +5,7 @@ RUN apt-get -y install nodejs && apt-get -y install gcc g++ make
 RUN npm i --global truffle
 RUN mkdir /home/truffle_folder
 RUN mkdir /home/truffle_folder/Geth
-RUN cd /home/truffle_folder && npm init -y && truffle init
+RUN cd /home/truffle_folder && npm init -y && truffle init && npm install @truffle/hdwallet-provider
 COPY contracts/* /home/truffle_folder/contracts/
 COPY migrations/* /home/truffle_folder/migrations/
 COPY test/* /home/truffle_folder/test/
