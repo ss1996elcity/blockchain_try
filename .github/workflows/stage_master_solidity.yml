@@ -1,14 +1,14 @@
-name: CI-stage-Solidity-develop
+name: CI-stage-Solidity-master
 
 on:
   push:
     branches:
-      - develop-solidity
+      - master-solidity
 
 env:
   DOCKER_HUB_NAME: "tss45elcity/"
   DOCKER_HUB_REPOSITORY: "repo_1"
-  TAG: ":blockchain_develop-solidity_branch_v1"
+  TAG: ":blockchain_master-solidity_branch_v1"
 
 jobs:
 
@@ -80,7 +80,7 @@ jobs:
         with:
           tags: ${{ env.DOCKER_HUB_NAME }}${{ env.DOCKER_HUB_REPOSITORY }}${{ env.TAG }}
           context: ./truffle_folder
-          file: Dockerfile_Local_Test_Network
+          file: Dockerfile_Rinkeby
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
           #labels: ${{ steps.meta.outputs.labels }}
@@ -100,8 +100,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           #key: ${{ secrets.SSHKEY }}
-          source: "deploy_develop-solidity/"
-          target: "api_develop-solidity"
+          source: "deploy_master-solidity/"
+          target: "api_master-solidity"
           strip_components: 1
 
       - name: Deploy to remote server via SSH action
@@ -113,10 +113,10 @@ jobs:
           #key: ${{ secrets.SSHKEY }}
           script: |
             # Run a new container from a new image
-            cd api_develop-solidity
-            echo ${{ secrets.PASSWORD }} | sudo -S docker stop test_ci_cd_blockchain_develop-solidity
-            echo ${{ secrets.PASSWORD }} | sudo -S docker container rm test_ci_cd_blockchain_develop-solidity
+            cd api_master-solidity
+            echo ${{ secrets.PASSWORD }} | sudo -S docker stop test_ci_cd_blockchain_master-solidity
+            echo ${{ secrets.PASSWORD }} | sudo -S docker container rm test_ci_cd_blockchain_master-solidity
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml stop
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml rm -f
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml pull
-            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml up -d --force-recreate ci_cd_blockchain_develop_solidity
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml up -d --force-recreate ci_cd_blockchain_master_solidity

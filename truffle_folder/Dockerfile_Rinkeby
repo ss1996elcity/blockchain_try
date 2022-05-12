@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+RUN sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN apt -y install nodejs && sudo apt -y install gcc g++ make
+RUN npm i --global truffle
+RUN mkdir /home/truffle_folder
+RUN cd /home/truffle_folder && npm init && truffle init && npm install @truffle/hdwallet-provider
+COPY truffle_folder/contracts/* /home/truffle_folder/contracts/
+COPY truffle_folder/migrations/* /home/truffle_folder/migrations/
+COPY truffle_folder/test/* /home/truffle_folder/test/
+COPY truffle_folder/truffle_config/truffle-config.js /home/truffle_folder/truffle-config.js
+RUN cd /home/truffle_folder && echo "truffle test" | truffle develop
+CMD cd /home/truffle_folder && echo "truffle migration -f 1 --to 2 --reset --network rinkeby" | truffle develop
