@@ -125,4 +125,4 @@ jobs:
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml stop
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml rm -f
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml pull
-            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml up -d --force-recreate ci_cd_blockchain_develop_solidity
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose -f docker-compose.yml up --force-recreate ci_cd_blockchain_develop_solidity
