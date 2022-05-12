@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 RUN apt-get update && apt-get -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-RUN curl -sL https://deb.nodesource.com/setup_12.x | -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt -y install nodejs && apt-get -y install gcc g++ make
 RUN npm i --global truffle
 RUN mkdir /home/truffle_folder
