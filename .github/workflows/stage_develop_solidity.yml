@@ -35,8 +35,8 @@ jobs:
       - name: Make Folder
         run: mkdir -p truffle_folder_/truffle_test 
 
-      - name: npm and truffle init && npm install @truffle/hdwallet-provider
-        run: cd truffle_folder_/truffle_test && npm init -y && truffle init
+      - name: npm and truffle init && install @truffle/hdwallet-provider
+        run: cd truffle_folder_/truffle_test && npm init -y && truffle init && install @truffle/hdwallet-provider
 
       - name: Copy contracts
         run: cp truffle_folder/contracts/* truffle_folder_/truffle_test/contracts/
