@@ -5,7 +5,7 @@ FROM ubuntu:latest
 #RUN add-apt-repository -y ppa:ethereum/ethereum
 #RUN apt-get install ethereum
 #RUN apt-get upgrade geth && geth version
-RUN sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+RUN apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN apt -y install nodejs && sudo apt -y install gcc g++ make
 RUN npm i --global truffle
