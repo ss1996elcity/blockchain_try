@@ -33,8 +33,8 @@ contract ZombieFactory is Ownable {
   }
   
    function my_sub(uint256 a) external returns (uint256) {
-  	a.sub(1);
-  	return a;
+  	uint256 res = a - 1;
+  	return res;
   }
 
   mapping (uint => address) public zombieToOwner;
