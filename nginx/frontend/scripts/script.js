@@ -1,6 +1,6 @@
 //import { sum, difference, product, quotient } from './functions.js'
 //import * as mathFunctions from './functions.js'
-const mathFunctions = require('../functions');
+const mathFunctions = require('./functions');
 const x = 10
 const y = 5
 document.getElementById('x').textContent = x
