@@ -1,9 +1,5 @@
 const mathFunctions = require('../functions');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum.sum(1, 2)).toBe(3);
-});
-
 const x = 10
 const y = 5
 
