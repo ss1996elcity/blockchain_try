@@ -1,12 +1,17 @@
-export function sum(x, y) {
+function sum(x, y) {
   return x + y
 }
-export function difference(x, y) {
+function difference(x, y) {
   return x - y
 }
-export function product(x, y) {
+function product(x, y) {
   return x * y
 }
-export function quotient(x, y) {
+function quotient(x, y) {
   return x / y
 }
+
+exports.sum = sum;
+exports.difference = difference;
+exports.product = product;
+exports.quotient = quotient;
