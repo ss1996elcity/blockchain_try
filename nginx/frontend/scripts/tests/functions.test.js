@@ -1,4 +1,4 @@
-import * as mathFunctions from './functions.js'
+import * as mathFunctions from '../functions.js'
 
 const x = 10
 const y = 5
