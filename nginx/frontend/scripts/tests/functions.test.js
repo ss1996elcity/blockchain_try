@@ -1,4 +1,4 @@
-const mathFunctions = require('../functions');
+const mathFunctions = require('./functions');
 
 const x = 10
 const y = 5
